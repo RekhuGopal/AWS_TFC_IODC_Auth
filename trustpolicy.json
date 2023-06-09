@@ -4,13 +4,13 @@
         {
             "Effect": "Allow",
             "Principal": {
-                "Federated": "OIDC_PROVIDER_ARN"
+                "Federated": "arn:aws:iam::357171621133:oidc-provider/app.terraform.io"
             },
             "Action": "sts:AssumeRoleWithWebIdentity",
             "Condition": {
                 "StringEquals": {
-                    "SITE_ADDRESS:aud": "AUDIENCE_VALUE",
-                    "SITE_ADDRESS:sub": "organization:ORG_NAME:project:PROJECT_NAME:workspace:WORKSPACE_NAME:run_phase:RUN_PHASE"
+                    "SITE_ADDRESS:aud": "aws.workload.identity",
+                    "SITE_ADDRESS:sub": "organization:CloudQuickLabs:project:Test-Project:workspace:TFC-AWS-OIDC:run_phase:*"
                 }
             }
         }

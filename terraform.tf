@@ -8,4 +8,11 @@ terraform {
   }
 
   
-backend "remote" {}
+backend "remote" {
+  organization = "CloudQuickLabs"
+
+    workspaces {
+      name = "TFC-AWS-OIDC"
+    }
+  }
+}

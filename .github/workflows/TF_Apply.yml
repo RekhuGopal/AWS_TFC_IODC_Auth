@@ -18,6 +18,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::357171621133:role/TFC-AWS-OIDC
+          role-session-name: samplerolesession
+          aws-region: 'us-east-1'
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2.0.2
         with:

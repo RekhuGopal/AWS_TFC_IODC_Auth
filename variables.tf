@@ -15,9 +15,3 @@ variable "token" {
     sensitive = true
   
 }
-
-variable "region" {
-    type = string 
-    sensitive = false
-  
-}

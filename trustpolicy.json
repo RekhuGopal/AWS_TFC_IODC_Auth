@@ -4,13 +4,16 @@
         {
             "Effect": "Allow",
             "Principal": {
-                "Federated": "arn:aws:iam::357171621133:oidc-provider/app.terraform.io"
+                "Federated": "arn:aws:iam::357171621133:oidc-provider/token.actions.githubusercontent.com"
             },
             "Action": "sts:AssumeRoleWithWebIdentity",
             "Condition": {
                 "StringEquals": {
-                    "SITE_ADDRESS:aud": "aws.workload.identity",
-                    "SITE_ADDRESS:sub": "organization:CloudQuickLabs:project:Test-Project:workspace:TFC-AWS-OIDC:run_phase:*"
+                    "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+                    "token.actions.githubusercontent.com:sub": [
+                        "repo:RekhuGopal/AWS_TFC_IODC_Auth:pull_request",
+                        "repo:RekhuGopal/AWS_TFC_IODC_Auth:ref:refs/heads/main"
+                    ]
                 }
             }
         }

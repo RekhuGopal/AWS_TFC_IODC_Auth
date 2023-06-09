@@ -6,8 +6,7 @@ terraform {
       version = "4.66.0"
     }
   }
-
-  
+ 
 backend "remote" {
   organization = "CloudQuickLabs"
 
